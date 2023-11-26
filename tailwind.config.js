@@ -10,23 +10,24 @@ module.exports = {
 	theme: {
 		extend: {
 			fontFamily: {
-				noto: ["var(--font-noto)"],
-				rubik: ["var(--font-rubik)"],
+				sans: ["var(--font-sans)"],
+				sans_jp: ["var(--font-sans-jp)"],
+				figtree: ["var(--font-figtree)"],
 			},
 			colors: {
 				// Light Mode
 				primaryBackgroundLight: "#F5F5F5", // Light Grey
 				textLight: "#333333", // Dark Grey
-				accentLight: "#009688", // Teal
+				accentLight: "#1E90FF", // Dodger Blue (Adjust to a more suitable blue)
 
 				// Dark Mode
 				primaryBackgroundDark: "#121212", // Very Dark Grey
 				textDark: "#ffffff", // White
-				accentDark: "#4CAF50", // Green
+				accentDark: "#2E8B57", // Sea Green (Adjust to a more suitable green)
 
 				// Borders
 				borderLight: "#D1D1D1", // Light Grey
-				borderDark: "#2D2D2D", // Dark Grey
+				borderDark: "#444", // Dark Grey
 
 				// Focus
 				focusLight: "#85D7FF", // Light Blue
@@ -36,12 +37,16 @@ module.exports = {
 				hoverLight: "#EAEAEA", // Lighter Grey
 				hoverDark: "#1F1F1F", // Darker Grey
 
+				hoverBgDark: "hsla(0,0%,100%,.02)",
+				hoverBgLight: "hsla(0,0%,100%,.05)",
+
+				// Button Colors
+				buttonBackground: "#4CAF50", // Green (Adjust to a more suitable color)
+				buttonHover: "#45A049", // Darker Green (Adjust to a more suitable color)
+
 				// Box Shadows
 				boxShadowLight: "rgba(0, 0, 0, 0.1)", // Light Grey shadow
 				boxShadowDark: "rgba(0, 0, 0, 0.6)", // Dark Grey shadow
-
-				// Multicolor Leaf SVG Placeholder
-				multicolorLeaf: "url(path-to-your-multicolor-leaf-svg)", // Replace with actual SVG path
 			},
 			fontSize: {
 				// Font Sizes
@@ -59,7 +64,9 @@ module.exports = {
 	},
 	variants: {},
 	plugins: [
-		// CSS Reset Plugin
-		require("tailwindcss-css-reset"),
+		require("@tailwindcss/typography"),
+		require("@tailwindcss/forms"),
+		require("tailwindcss-logical"),
+		require("nightwind"),
 	],
 };

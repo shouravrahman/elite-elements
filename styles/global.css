@@ -1,0 +1,8 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.header {
+	background: url("/images/tui-bg-light.jpg");
+	background-size: cover;
+}
