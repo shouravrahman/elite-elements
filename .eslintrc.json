@@ -1,3 +1,54 @@
 {
-  "extends": "next/core-web-vitals"
+	"extends": [
+		"next/core-web-vitals",
+		"plugin:eslint-plugin-jsx-a11y/recommended"
+	],
+	"plugins": ["jsx-a11y"],
+	"rules": {
+		"jsx-a11y/anchor-has-content": [
+			2,
+			{
+				"components": ["Anchor"]
+			}
+		],
+		"jsx-a11y/alt-text": [
+			2,
+			{
+				"elements": ["img", "object", "area", "input[type=\"image\"]"],
+				"img": ["Image"],
+				"object": ["Object"],
+				"area": ["Area"],
+				"input[type=\"image\"]": ["InputImage"]
+			}
+		],
+		"jsx-a11y/heading-has-content": [
+			2,
+			{
+				"components": ["MyHeading"]
+			}
+		],
+		"jsx-a11y/img-redundant-alt": [
+			2,
+			{
+				"components": ["Image"],
+				"words": ["img", "image", "alt"]
+			}
+		],
+		"jsx-a11y/aria-role": [
+			2,
+			{
+				"allowedInvalidRoles": ["text"],
+				"ignoreNonDOM": true
+			}
+		],
+		"jsx-a11y/anchor-ambiguous-text": [
+			2,
+			{
+				"words": ["click this", "link", "click here"]
+			}
+		],
+		"jsx-a11y/html-has-lang": [1],
+		"jsx-a11y/anchor-is-valid": [2],
+		"jsx-a11y/aria-unsupported-elements": [2]
+	}
 }
