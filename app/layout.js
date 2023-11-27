@@ -1,21 +1,30 @@
-import "./globals.css";
+import Navbar from "@/components/Navbar";
+import "../styles/global.css";
 
-import { Rubik, Noto_Sans } from "next/font/google";
+import { Noto_Sans, Figtree, Noto_Sans_JP } from "next/font/google";
 
-const noto = Noto_Sans({
+const sans = Noto_Sans({
 	subsets: ["latin"],
 	display: "swap",
 	weight: ["500", "600", "700"],
-	variable: "--font-noto",
+	variable: "--font-sans",
 });
-
-const rubik = Rubik({
+const figtree = Figtree({
 	subsets: ["latin"],
 	display: "swap",
-	variable: "--font-rubik",
+	weight: ["700", "800", "900"],
+	variable: "--font-figtree",
+});
+
+const sans_jp = Noto_Sans_JP({
+	subsets: ["latin"],
+	display: "swap",
+	weight: ["500", "600", "700", "800"],
+	variable: "--font-sans-jp",
 });
 
 export const metadata = {
+	metadataBase: new URL("http://localhost:3000"),
 	openGraph: {
 		title: "Elite Elements - Tailwind & React Component Library",
 		description:
@@ -70,7 +79,9 @@ export const metadata = {
 export default function RootLayout({ children }) {
 	return (
 		<html lang='en'>
-			<body className={`${noto.variable} ${rubik.variable} font-rubik`}>
+			<body
+				className={`${sans.variable} ${figtree.variable} ${sans_jp.variable} font-sans bg-primaryBackgroundLight`}
+			>
 				{children}
 			</body>
 		</html>

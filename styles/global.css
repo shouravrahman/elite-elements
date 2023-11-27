@@ -6,3 +6,8 @@
 	background: url("/images/tui-bg-light.jpg");
 	background-size: cover;
 }
+@layer utilities {
+	.filter-grayscale {
+		filter: grayscale(100%);
+	}
+}
