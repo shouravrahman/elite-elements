@@ -30,7 +30,7 @@ const Navbar = () => {
 			<div
 				aria-label='call to actions'
 				role='region'
-				className='flex items-center justify-between space-x-8 font-semibold text-textLight'
+				className='flex items-center justify-between space-x-10 font-semibold text-accentLight'
 			>
 				<Link href='#signIn'>Sign In</Link>
 				<StyledLink href='#github' filled={true} label='Github' />
